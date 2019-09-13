@@ -1,14 +1,115 @@
-# EasieRR
-Data from Biopac must be exported from the Biopac software to a txt file. When loading the data, the user has the option whether to synchronise the data with video recording of the experiment. If no synchronisation is needed the program will open a loading screen.
+Read Me
+1.	About EasieRR 
+EasieRR is an open-access software developed to assist researchers in the use of heart rate parameters and their processing and analysis. Special emphasis was put on an intuitive graphical user interface (GUI) to ease manual detection and correction of artefacts as well as a lean program structure in order to make HRV analysis as easy as possible.
+2.	Features
+
+2.1.	Main features
+•	Open access software
+•	Intuitive GUI
+•	Automated and manual peak detection for inter beat interval extraction in ECG data
+•	Easy artifact detection by means of tachogram and Poincaré plots
+•	Manual artifact processing in ECG data
+•	Analysis in time-domain and non-linear domain
+
+
+2.2.	Customized analysis for different species
+•	Allows to set sample frequency
+•	Allows to set refractory time
+•	Analyses raw ECG data in txt format and csv format
+•	Allows to use default settings for small ruminants and pigs or customize settings
  
-The “Set FS” window is for setting the sampling frequency. The “Set refractory time” determines how long after a peak no new peak will be detected. This corresponds to the absolute refractory period, the period where, no matter how strong a stimulus, no new heartbeat can be initiated. Pressing the “Load Biopak” button will open up a dialog box for choosing the Biopack file to be analysed. To maximize the compability of this software it is also possible to analyse data in the form of comma separated value (CSV) files, this is accomplished using the “Load CSV” button. When any of these two lading buttons are used the loading screen will close and the analysis will begin. The peak detection method being used is peak prominence: The height of the peak to be detected must be at least a certain value times the width of the peak at half the max height. This value can be set in the “Peak prominence” window. Before peak detection is being done the ECG signal is bandpass filtered. To change the lower- and higher cut-off frequency the user can change the value given in the “Low cutoff” and “High cutoff” window.
-If synchronisation is needed an additional file is needed to establish a common point in time for the ECG data and video; A marker that can be seen on both data streams. This synchronisation is done by the mean of a Microsoft Excel file containing three columns: First column must contain the exact filename used for the txt file. Second column must contain the number of seconds from the beginning of the ECG data until the marker and the third column must contain the number of seconds from the beginning of the video until the marker seen on the video. Having these data in a separate Excel sheet enables the user to have all times for all files in a research project in one file. Our program will automatically look for the filename in the first column and create a timeline for the HRV data that starts at the beginning of the video, thereby making analysis in Observer much easier. Should Excel be set up to use comma as separator, column two and three must be in whole seconds and be formatted as “General”. By utilizing this synchronisation the ECG and thereby the HRV data will always be synchronized with the video. If something happens at 10 seconds on the ECG timeline, it corresponds to what happens at 10 after the beginning of the video.
-The GUI first does a band pass filtering on the raw ECG data (4. Order 0 degree filtering with low and high cut-off frequency determined by the user), thereby removing high frequency peaks in the signal as well as removing any DC offset.
-Peak detection for extraction of cycle times was done by using peak prominence: for a peak to be detected the height had to be at least a user-determined value of the width of the peak at half height. As ECG signal from free moving animals can differ from individual to individual, the GUI had two options for peak detection: Positive peaks and negative peaks. Traditionally positive peaks (the R peak) are used for HRV, but as long as the variability within the cycles of the heart rate is calculated, negative peaks are also valid measuring points for the RR intervals used in the HRV calculations
-For visually examining the ECG data, the GUI has two interactive windows. The first window shows the band pass filtered ECG data as well as the high pass filtered ECG. The first is used for detection of peaks for establishing RR times, the second is displayed for visually examining the validity of the peak detection. To facilitate the detection of faulty RR interval detection the second window shows the corresponding RR interval values in milliseconds. The two zoomable windows displaying the ECG and RR interval plots are at all times synchronised. By examining only the bandpass filtered ECG the user will need to zoom in on individual cycles to detect faulty peak detections and thereby faulty RR intervals. By including a window displaying synchronised RR intervals faulty peak detection can be done without the need to zoom into individual cycles as the RR interval arising from faulty peak detection will differ significantly from the surrounding RR intervals. This will be easy reconcilable as a distinct peak in the RR interval plot. An absolute refractory time of 300 ms is built in the RR interval algorithm.
-The workflow using the GUI consists of first detecting time ranges where the ECG data is good. The user has the option to always use the same time range (i.g. 10 or 20 seconds) as often used in previous studies (REF). if a fixed time range is used, the user sets a crosshair to mark the beginning of the time range he wants to use for further analysis. If the user wants to use time ranges of varying length, two time spots must be marked on the window showing the signal: The beginning and the end of the time range. The GUI will insert two vertical lines I the window displaying the tachogram, one at the start of the time range and one at the end. This way it is easy for the user to go through the entire signal and chose non-overlapping time ranges. 
-If there is faulty RR interval detections in the time range chosen, there is the option to remove them. Some software chooses to interpolate the signal, but since this GUI uses only the intervals and not the absolute times for calculating the HRV parameters, the process of creating fake data by interpolating is not necessary and the faulty intervals are treated as outliers and erased from the dataset. The program allows for undoing an outlier. The last outlier marked and disposed of in the data, can be taken back into account during the HRV calculations
-Another approach for ensuring correct RR interval determination is the possibility of manually moving individual peaks. If during the visual inspection it is observed that a wrong peak has been used to establish the RR interval, the user has the option to mark which peak is wrongly detected and then manually mark where the correct location of the peak should be. This change of location for a peak must be done within two periods of the signal: The user must mark the new location of the peak to the right of the previous peak detected and to the left of the following peak detected. Like in the outlier process the program also allows for undoing a move of a peak.
-As soon as the user chooses a time range, all relevant HRV parameters are calculated (men heart rate, RMSSD, SD1, SD2, percentage of outliers, number of data points) and a Poincare plot is made. Using the Poincare plots makes it easy to detect outliers that might have been missed using the RR interval window and the ECG data. If faulty data is detected the user can remove outliers and recalculate.
-When the user is satisfied with the current time window and the associated HRV parameters, he/she can save the data to a table. This table is formatted for maximum compatibility with Observer. This means each time window saved to the table results in two lines; The first line contain the start time (in seconds) and the value of all the HRV parameters as well as number of  peaks used for the calculations. The second line contains the stop time (in seconds) and the same values as the first line. This might seem reductant, but it is the easiest way to import the data into Observer.
-This way the entire data from the individual experiment can be evaluated and when HRV parameters for all good time ranges has been calculated, the user can choose to save the set of parameters to a file. This name of this file automatically contains the name of the txt file created in Biopack. This way it will always be possible to go back and know which experiments and animal the HRV parameters comes from. Besides the above mentioned txt file used for further analysis, the program also saves a matlab file with the same name as the txt file. This mat file contains all relevant data for plotting the Poincare plot at a later point. The GUI contains a button for loading and plotting Poincare plots previously saved.
+
+2.3.	Detection of peaks in ECG data and extraction of inter beat intervals
+•	Allows for customized filtering of data (high and low pass)
+•	Detects R-peaks automatically utilizing a peak prominence algorithm
+•	Offers two options for peak detection: positive peaks and negative peaks
+ 
+
+2.4.	Detection and processing of artifacts 
+•	Allows for manual correction of artifacts: selection of data-points, deletion of mis-detected data points and insertion of data points
+•	Instantaneous display of corrected signal in tachogram
+•	Visualization of data points in Poincaré plot to facilitate detection of artifacts
+ 
+
+2.5.	Analysis of heart rate variability (HRV) estimates in time and frequency domain
+•	Computes HRV estimates in time and non-linear domain
+•	Displays HRV statistics and Poincaré plots as soon as data sequences are selected
+•	Allows selection and subsequent analysis and storage of several sequences in a row
+ 
+
+2.6.	Storage of analysis and HRV statistics
+•	Stores summary of HRV estimates of analysed sequences to the disk
+•	Stores Poincaré plots and RR time probability histogram to disk
+•	Allows re-loading of previously analysed data
+ 
+
+2.7.	Synchronization with behavioural data
+•	Offers the possibility to choose synchronization option when data is imported
+•	Facilitates comparison of ECG data with behavioural data from videos
+
+3.	Computational background 
+EasieRR is a MATLAB based (Mathworks, Natick, MA, USA) software and has been compiled in…..?. The software is available for Microsoft Windows only, as a stand-alone application.
+Filter
+EasieRR applies by default a band pass filter (4. Order 0 degree filter at a lower frequency of 1 Hz and higher frequency of 20 Hz), hence removing high frequency peaks in the signal as well as removing any DC offset. Default settings can be easily customized and adapted for every species.
+Peak detection
+The peak detection used for heart cycle determination and inter beat interval extraction in EasieRR is based on a peak prominence algorithm: The height of the potential peak to be detected must be at least a certain user-determined value (default: 0.55) times the width of the peak at half the max.  height. Combined with the band pass filter and a predetermined minimum timespan (default: 300ms) between inter beat intervals (=heart refractory time of the species used), this method allows for robust peak detection.
+Artefact correction
+Artefact correction in EasieRR is based on a deletion algorithm proposed by Lippmann and colleagues (1994). This method has been shown to be best suited for analysis in the time-domain and whenever short sequences of ECG recordings have to be analysed. EasieRR also offers the possibility to manually correct artefacts by selecting missed peaks or deselecting wrongly detected peaks.
+
+4.	Graphical user interface
+Overview
+The GUI is split into three separate interactive windows: an upper window displaying the ECG signal (1) which allows to visually inspect QRS complexes and to correct artefacts. The lower left window shows the corresponding tachogram (2) and the lower right window a Poincaré plot (3) facilitating the efficient location of artefacts. 
+ 
+
+EasieRR Buttons: Description and Function
+The EasieRR GUI is operated via a range of buttons varying in colour. Descriptions as well as function of every single button can be found in the table below. Colours in the table match the button colours in the GUI.
+Button Description	Button Function
+Choose data range	Selects the data range to be analysed
+Move peak	Moves selected data point from one location to another 
+Undo last move	Reverses the last movement 
+Insert peak	Inserts new selection of a data point
+Undo insertion	Reverses last insertion 
+Mark outlier	Marks a data point as an outlier to be deleted
+Undo last outlier	Reverses last deletion
+Recalculate	Recalculated HRV estimates after artefact correction or new selection of data range
+Reset all	Resets all artefact corrections within the current selection
+Save range	Saves currently selected data range and HRV estimates into check data box
+Undo range	Reverses last selection of data range
+Save to File	Saves data from all previously saved sequences  to a file
+Load data	Loads ECG data in txt format
+Print Poincaré	Reloads previously analysed poincaré plots and histogram 
+Reset and recalculate	Resets everything to the starting point
+Check data	Displays data of all previously saved data ranges
+Change peak	Switches between positive and negative peak cycle detection
+Separate figure	Opens Poincaré plot as separate figure 
+Zoom in/out tool	Zooms in/out of ECG and tachogram
+Hand tool	Moves displayed section of ECG and tachogram
+Sync box	Asks for xls file to synchronize with ECG txt file when ticked
+Fixed range box	Uses alwys the same length of time range when ticked
+
+5.	Workflow: 
+
+ECG analysis
+
+1.	Start EasieRR and a dialogue box will pop up.
+2.	Set the sampling frequency, refractory time, peak prominence for peak detection, frequency for low cut-off and high cut-off filter or use default settings.
+3.	Load a new data file (txt or csv format) or a previously analysed file
+4.	Select data range(s) to be analysed
+5.	Examine data by means of ECG, tachogram and poincaré plot
+6.	Correct data by inserting, moving or deleting artefacts in the ECG window
+•	to insert a new selection: press ‘insert peak’ button and mark the new location on the ECG signal
+•	to move selected peak: press the ‘move peak’ button and mark 1) wrongly detected peak location, 2) correct peak location (within two intervals of the signal)
+•	to delete artefact: press ‘mark outlier’ and mark outlier
+7.	Save every data range individually after correction is finished and view HRV statistics using the ‘check data’ button.
+8.	Proceed to next data range and repeat steps 4-7
+9.	Save all previously analysed data ranges using the ‘save to file’ button. Results will be saved in txt and mat format.
+10.	 To view analysed data at a later point use the ‘reload data’ button and choose the mat file which contains all relevant data for plotting the analysed data ranges and Poincaré plots.
+
+Synchronization with behavioural data
+HRV data can also be synchronized with behavior via import into common software for behavioral video analysis (i.e. The Observer®), if video and ECG recording have not been synchronized before analysis.
+1.	Prepare an additional file in xls format arranged as follows: 
+•	First column: exact filename used for the ECG txt files. 
+•	Second column: latency (s) from ECG data start
+•	Third column: latency (s) from video start until observation start
+2.	Open EasieRR and tick ‘Sync’ box before loading a new data file.
+3.	Proceed with steps 2-7 (described in the workflow for ECG analysis above)
