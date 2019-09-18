@@ -1,5 +1,5 @@
 
-EasieRR 
+EasieRR
 
 EasieRR is an open-access software developed to assist researchers in the use of heart rate parameters and their processing and analysis. 
 EasieRR has an intuitive graphical user interface (GUI) displaying ECG, tachogram and Poincaré plots which facilitate manual detection and correction of artefacts.
