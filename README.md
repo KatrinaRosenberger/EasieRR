@@ -7,7 +7,7 @@ The software offers analysis of HRV in the time- and non-linear domain.
 
 Application Documentation
 
-The official documentation is hosted here: https://figshare.com/account/home#/projects/68594
+The official documentation is hosted here: https://figshare.com/account/home#/projects/68594.
 The documentation provides a user manual as well as tutorials and support.
 
 Bugs, requests, questions
