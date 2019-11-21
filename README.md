@@ -17,6 +17,7 @@ If you found bugs, have requests for features or questions, please let us know b
 Citing EasieRR
 
 If you use EasieRR in publications or elsewhere, please acknowledge the authors’ work and cite the software as follows: Rasmussen, Jeppe; Rosenberger, Katrina; Langbein, Jan (2019): EasieRR Installer_V33. figshare. Software. https://doi.org/10.6084/m9.figshare.9804578.
+
 The full publication has been submitted in November 2019 and will be made available soon.
 
 Licence
