@@ -23,4 +23,5 @@ The full publication has been submitted in November 2019 and will be made availa
 Licence
 
 Distributed with GNU General Public License V3.
+
 Copyright (C) 2019, Jeppe Have Rasmussen.
