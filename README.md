@@ -7,8 +7,8 @@ The software offers analysis of HRV in the time- and non-linear domain.
 
 Application Documentation
 
-The official documentation is hosted here: https://figshare.com/account/home#/projects/68831.
-The documentation provides a user manual as well as tutorials and support.
+The official documentation is hosted here: https://figshare.com/projects/EasieRR/68831.
+The documentation provides a user manual as well as example files and support.
 
 Bugs, requests, questions
 
@@ -18,7 +18,7 @@ Citing EasieRR
 
 If you use EasieRR in publications or elsewhere, please acknowledge the authors’ work and cite the software as follows: Rasmussen, Jeppe; Rosenberger, Katrina; Langbein, Jan (2019): EasieRR Installer_V33. figshare. Software. https://doi.org/10.6084/m9.figshare.9804578.
 
-The full publication has been submitted in November 2019 and will be made available soon.
+The full publication will be made available soon.
 
 Licence
 
