@@ -12,11 +12,11 @@ The documentation provides a user manual as well as example files and support.
 
 Bugs, requests, questions
 
-If you found bugs, have requests for features or questions, please let us know by using the github tracker: https://github.com/Magoushla/EasieRR/issues
+If you found bugs, have requests for features or questions, please let us know by using the github tracker: https://github.com/KatrinaRosenberger/EasieRR/issues
 
 Citing EasieRR
 
-If you use EasieRR in publications or elsewhere, please acknowledge the authors’ work and cite the software as follows: Rasmussen, Jeppe; Rosenberger, Katrina; Langbein, Jan (2019): EasieRR Installer_V33. figshare. Software. https://doi.org/10.6084/m9.figshare.9804578.
+If you use EasieRR in publications or elsewhere, please acknowledge the authors’ work and cite the software as follows: Rasmussen, Jeppe; Rosenberger, Katrina; Langbein, Jan (2019): EasieRR Installer_V34. figshare. Software. https://doi.org/10.6084/m9.figshare.9804578.
 
 The full publication will be made available soon.
 
