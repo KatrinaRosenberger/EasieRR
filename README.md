@@ -5,7 +5,6 @@ EasieRR is an open-source software developed to assist researchers in the use of
 EasieRR has an intuitive graphical user interface (GUI) displaying ECG, tachogram and Poincaré plots which facilitate manual detection and correction of artefacts.
 The software offers analysis of HRV in the time- and non-linear domain.
 
-EasieRR is a free software released under the GNU General Public License and comes without warranty of any kind.
 
 Application Documentation
 
@@ -24,6 +23,6 @@ The full publication will be made available soon.
 
 Licence
 
-Distributed with GNU General Public License V3.
+EasieRR is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 Copyright (C) 2019, Jeppe Have Rasmussen.
