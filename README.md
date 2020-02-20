@@ -26,3 +26,9 @@ License
 EasieRR is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 Copyright (C) 2019, Jeppe Have Rasmussen.
+
+Acknowledgement
+
+The authors would like to acknowledge the great support from Annika Krause and Katrin Siebert.
+
+The EasieRR logo was designed by Katrina Rosenberger with Canva.
