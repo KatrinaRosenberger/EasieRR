@@ -10,6 +10,7 @@ Application Documentation
 
 The official documentation is hosted here: https://figshare.com/projects/EasieRR/68831.
 The documentation provides a user manual as well as example files and support.
+The latest released version of the software you can find on Zenodo: https://zenodo.org/badge/latestdoi/202159662.
 
 Bugs, requests, questions
 
