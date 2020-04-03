@@ -1,4 +1,3 @@
-
 EasieRR
 
 EasieRR is an open-source software developed to assist researchers in the use of heart rate parameters and their processing and analysis. 
@@ -20,13 +19,13 @@ Citing EasieRR
 
 If you use EasieRR in publications or elsewhere, please acknowledge the authors’ work and cite the software as follows: Rasmussen, Jeppe; Rosenberger, Katrina; Langbein, Jan (2020): EasieRR Installer_V34. figshare. Software. https://doi.org/10.6084/m9.figshare.9804578.
 
-The full publication will be made available soon.
+The full publication will be made available as soon as published online.
 
 License
 
 EasieRR is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
-Copyright (C) 2019, Jeppe Have Rasmussen.
+Copyright (C) 2020, Jeppe Have Rasmussen.
 
 Acknowledgement
 
