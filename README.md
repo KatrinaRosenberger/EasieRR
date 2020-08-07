@@ -19,7 +19,7 @@ Citing EasieRR
 
 If you use EasieRR in publications or elsewhere, please acknowledge the authors’ work and cite the software as follows: 
 
-Rasmussen, Jeppe; Rosenberger, Katrina; Langbein, Jan (2020): EasieRR Installer_V34. figshare. Software. https://doi.org/10.6084/m9.figshare.9804578.
+Rasmussen, Jeppe; Rosenberger, Katrina (2020): EasieRR V35. figshare. Software. https://doi.org/10.6084/m9.figshare.12753458.v2
 
 Rasmussen, Jeppe; Rosenberger, Katrina; Langbein, Jan (2020). EasieRR: An open-source software for noninvasive heart rate variability assessment. Methods Ecol Evol., 00:1–10. https://doi.org/10.1111/2041-210X.13393
 
